@@ -10,9 +10,16 @@ class EmailAddressParser
   end
 
   def parse
+    parsed_set = []
+    current_address = ""
     @email_addresses.each do |address|
       if address.end_with?(",")
-        address = address.slice(0, (address.length - 1))
+        current_address = address.slice(0, (address.length - 1))
+      else
+        current_address = address
+      end
+      if !parsed_set.include?(current_address)
+        @email_addresses << current_address
       end
     end
     @email_addresses
