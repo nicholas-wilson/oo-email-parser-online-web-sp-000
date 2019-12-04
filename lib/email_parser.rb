@@ -19,9 +19,9 @@ class EmailAddressParser
         current_address = address
       end
       if !parsed_set.include?(current_address)
-        @email_addresses << current_address
+        parsed_set << current_address
       end
     end
-    @email_addresses
+    @email_addresses = parsed_set
   end
 end
