@@ -10,6 +10,11 @@ class EmailAddressParser
   end
 
   def parse
+    @email_addresses.each do |address|
+      if address.end_with?(",")
+        address = address.slice(0, (address.length - 1))
+      end
+    end
     @email_addresses
   end
 end
