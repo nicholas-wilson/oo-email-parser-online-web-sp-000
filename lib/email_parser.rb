@@ -14,6 +14,7 @@ class EmailAddressParser
       else
         @email_addresses << word.slice(0, (word.length - 2))
       end
+    end
   end
 
   def parse
