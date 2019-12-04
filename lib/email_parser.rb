@@ -12,7 +12,7 @@ class EmailAddressParser
       if word == addresses_with_commas.last
         @email_addresses << word
       else
-        @email_addresses << word.slice(0, (word.last - 1))
+        @email_addresses << word.slice(0, (word.length - 1))
       end
     end
   end
