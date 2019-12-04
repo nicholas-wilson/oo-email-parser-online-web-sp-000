@@ -6,15 +6,7 @@ class EmailAddressParser
   attr_accessor :email_addresses
 
   def initialize(addresses)
-    @email_addresses = []
-    addresses_with_commas = addresses.split(' ')
-    addresses_with_commas.each do |word|
-      if word == addresses_with_commas.last
-        @email_addresses << word
-      else
-        @email_addresses << word.slice(0, (word.length - 1))
-      end
-    end
+    @email_addresses = addresses.split(' ')
   end
 
   def parse
